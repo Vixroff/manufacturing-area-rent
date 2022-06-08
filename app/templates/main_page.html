@@ -91,10 +91,23 @@
               </div>
           </div>
         </section>
+
+        <div class="containermt-5">
+            <h1> Люди из нашей БД</h1>
+            {% for human in peoples%}
+            <div class="alert alert-info">
+                <h2> {{ el.adress }}</h2>
+                <p> {{ el.age }}</p>
+                <button class="btn btn-warning">Подробнее</button>
+            </div>
+            {% endfor %}
+        </div>
+
       
+
+
         <div class="album py-5 bg-light">
           <div class="container">
-      
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
               <div class="col">
                 <div class="card shadow-sm">
