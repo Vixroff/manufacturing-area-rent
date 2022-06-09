@@ -48,7 +48,7 @@ def read_csv(filename):
 
 
 if __name__ == '__main__':
-    
+    read_csv('buildings.csv')
     read_csv('tenants.csv')
     read_csv('sections.csv')
 
