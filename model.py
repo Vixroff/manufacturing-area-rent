@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Integer, ForeignKey, Date
+from sqlalchemy import Column, String, Integer, Float, ForeignKey, Date
 from sqlalchemy.orm import relationship
 from db import Base, engine
 
@@ -9,7 +9,6 @@ from db import Base, engine
 
 class Buildings(Base):
     __tablename__ = 'buildings'
-
     id = Column(Integer, primary_key = True)
     street = Column(String)
     index = Column(String, unique = True)
@@ -24,12 +23,11 @@ class Buildings(Base):
 
 class Tenants(Base):
     __tablename__ = 'tenants'
-
     id = Column(Integer, primary_key = True)
     name = Column(String, unique = True)
     email = Column(String)
     personal_phone = Column(String) 
-    commercial_phone = Column(Integer)
+    commercial_phone = Column(String)
     start_rent = Column(Date)
     end_rent = Column(Date)
     section = relationship('Sections', back_populates ='tenant')
@@ -45,7 +43,7 @@ class Sections(Base):
      index = Column(Integer)
      floor = Column(Integer)
      function = Column(String)
-     area = Column(Integer)
+     area = Column(Float)
      tenant_id = Column(Integer, ForeignKey('tenants.id'))
 
      tenant = relationship('Tenants', back_populates = 'section')
