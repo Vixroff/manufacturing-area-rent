@@ -96,8 +96,8 @@
             <h1> Люди из нашей БД</h1>
             {% for human in peoples%}
             <div class="alert alert-info">
-                <h2> {{ el.adress }}</h2>
-                <p> {{ el.age }}</p>
+                <h2> {{ human.adress }}</h2>
+                <p> {{ human.age }}</p>
                 <button class="btn btn-warning">Подробнее</button>
             </div>
             {% endfor %}

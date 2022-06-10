@@ -1,4 +1,4 @@
-from app import app
+from webapp import app
 
 
 """ #flask run# - в терминале запустит веб-сервер с приложением"""
