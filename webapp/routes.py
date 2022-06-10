@@ -17,14 +17,22 @@ def login():
     return render_template('login_page.html', title='Sign In', form=form)
 
 @app.route("/buildings")
-def show_buildings():
+def buildings():
     building = session.query(Buildings).all()
     return render_template('show_buldings.html', building=building)
 
-@app.route("/sections")
-def show_sections():
-    buildings_id = session.query(Buildings.id).all()
-    sectionss = session.query(Sections).all()
-    return render_template('show_sections.html',sectionss=sectionss,buildings_id=buildings_id)
+@app.route("/buildings/<int:id>")
+def building_sections(id):
+    sections = session.query(Sections).filter_by(building_id=id).all()
+    return render_template('show_sections.html',sections=sections)
 
+@app.route("/tenants")
+def tenants_in_section():
+    tenants= session.query(Tenants).all()
+    return render_template('show_tenants.html',tenants=tenants)
+       
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('page404.html'), 404
 
+    
