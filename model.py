@@ -18,7 +18,7 @@ class Buildings(Base):
     photo = Column(String)
        
     def __repr__(self):
-        return f"{self.sections}, {self.index}"
+        return f"{self.street}, {self.index}"
 
 
 class Tenants(Base):

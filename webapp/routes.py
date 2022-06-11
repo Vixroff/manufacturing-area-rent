@@ -23,13 +23,14 @@ def buildings():
 
 @app.route("/buildings/<int:id>")
 def building_sections(id):
+    tenants = session.query(Sections).filter_by(tenant_id=id).all()
     sections = session.query(Sections).filter_by(building_id=id).all()
-    return render_template('show_sections.html',sections=sections)
+    return render_template('show_sections.html',sections=sections,tenants=tenants)
 
-@app.route("/tenants")
-def tenants_in_section():
-    tenants= session.query(Tenants).all()
-    return render_template('show_tenants.html',tenants=tenants)
+#@app.route("/tenants")
+#def tenants_in_section():
+    #tenants = session.query(Tenants).all()
+    #return render_template('show_tenants.html',tenants=tenants)
        
 @app.errorhandler(404)
 def page_not_found(error):
