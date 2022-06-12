@@ -16,7 +16,7 @@ class Buildings(Base):
     count_floors = Column(Integer)
     sections = relationship('Sections', back_populates = 'building')
     photo = Column(String)
-    
+       
     def __repr__(self):
         return f"{self.street}, {self.index}"
 
