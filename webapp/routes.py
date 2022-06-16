@@ -1,4 +1,4 @@
-from webapp import app
+from webapp import app, db
 from config import Config
 from flask import render_template, redirect, request, session, url_for, json
 from webapp.login_forms import LoginForm
@@ -24,10 +24,13 @@ def buildings():
     return render_template('show_buldings.html', building=building)
 
 
-@app.route("/buildings/<int:id>")
-def building_sections(id):
-    tenants = Sections.session.query.filter_by(tenant_id=id).all()
-    sections = Sections.query.filter_by(building_id=id).all()
+@app.route("/buildings/<int:building_id>")
+def building_sections(building_id):
+    sections = db.session.query(Sections).filter_by(building_id=str(building_id)).all()
+    tenants = []
+    for section in sections:
+        tenant = section.tenant
+        tenants.append(f"{tenant} - {section.index}")
     return render_template('show_sections.html',sections=sections,tenants=tenants)
 
 
