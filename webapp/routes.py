@@ -1,9 +1,9 @@
-from flask import render_template, redirect, request, session, url_for
-from webapp import app
+from webapp import app, db
+from config import Config
+from flask import render_template, redirect, request, session, url_for, json
 from webapp.login_forms import LoginForm
-from model import Buildings, Tenants, Sections
-from db import db_session
-session = db_session
+from webapp.models import Buildings, Tenants, Sections
+
 
 
 @app.route('/index')
@@ -11,29 +11,32 @@ session = db_session
 def index():
     return render_template('main_page.html', title= 'Главная страница')
 
+
 @app.route('/login')
 def login():
     form = LoginForm()
     return render_template('login_page.html', title='Sign In', form=form)
 
+
 @app.route("/buildings")
 def buildings():
-    building = session.query(Buildings).all()
+    building = Buildings.query.all()
     return render_template('show_buldings.html', building=building)
 
-@app.route("/buildings/<int:id>")
-def building_sections(id):
-    tenants = session.query(Sections).filter_by(tenant_id=id).all()
-    sections = session.query(Sections).filter_by(building_id=id).all()
-    return render_template('show_sections.html',sections=sections,tenants=tenants)
 
-#@app.route("/tenants")
-#def tenants_in_section():
-    #tenants = session.query(Tenants).all()
-    #return render_template('show_tenants.html',tenants=tenants)
-       
+@app.route("/buildings/<int:building_id>")
+def building_sections(building_id):
+    sections = db.session.query(Sections).filter_by(building_id=str(building_id)).all()
+    return render_template('show_sections.html',sections=sections)
+
+
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('page404.html'), 404
 
-    
+
+@app.route('/map')
+def get_map():
+    buildings = Buildings.query.all()
+    return render_template('map.html', title= 'Map', buildings = buildings)
+
