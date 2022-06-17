@@ -27,11 +27,7 @@ def buildings():
 @app.route("/buildings/<int:building_id>")
 def building_sections(building_id):
     sections = db.session.query(Sections).filter_by(building_id=str(building_id)).all()
-    tenants = []
-    for section in sections:
-        tenant = section.tenant
-        tenants.append(f"{tenant} - {section.index}")
-    return render_template('show_sections.html',sections=sections,tenants=tenants)
+    return render_template('show_sections.html',sections=sections)
 
 
 @app.errorhandler(404)

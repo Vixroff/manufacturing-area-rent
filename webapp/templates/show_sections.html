@@ -1,17 +1,16 @@
 <div class="containermt-5">
   <h1> Список секций </h1>
     {% for sec in sections %}
-        <h2> Cекция номер {{ sec.index }} </h2>
-        <p> Назначение - {{ sec.function }}</p>
-        <p> Площадь:{{ sec.area }} м^2 </p>
+      <h2> Cекция номер {{ sec.index }} </h2>
+      <p> Назначение - {{ sec.function }}</p>
+      <p> Площадь:{{ sec.area }} м^2 </p>
+      {% if sec.tenant == None %}
+        <p> Арендатор отсутсвует </p>
+      {% else %}
+        <p> Арендатор - {{ sec.tenant }} </p>
+      {% endif %}
     {% endfor %}
 </div>
-<div class="containermt-5">
-  <h1> Список арендаторов </h1>
-    {% for tenant in tenants %}
-        <h2> {{tenant}}</h2>
-      
-    {% endfor %}
-</div>
+
 
 
