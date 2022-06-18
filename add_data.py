@@ -6,9 +6,13 @@ from datetime import datetime
 """
 Функции присваивания значений
 """
+def check_empty(data):
+    if data == '':
+        return None
+    return data
 
 def add_building(row):
-    building = Buildings(street = row['street'], index = row['index'],
+    building = Buildings(street = row['street'], index = row['index'].strip(),
     count_floors = row['count_floors'], photo = row['photo'])
     
     db.session.add(building)
