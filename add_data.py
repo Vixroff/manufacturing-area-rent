@@ -28,7 +28,7 @@ def add_tenant(row):
 
 def add_section(row):
     section = Sections(building_id = row['building_id'], index = row['index'], floor = row['floor'],
-    function = row['function'], area = row['area'], tenant_id = row['tenant_id'])
+    function = row['function'], area = row['area'], tenant_id = check_empty(row['tenant_id']))
 
     db.session.add(section)
     db.session.commit()
