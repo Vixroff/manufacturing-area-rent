@@ -36,7 +36,7 @@ def rent():
     form = RentFilterForm()
     result = Sections.query.filter(Sections.tenant_id.is_(None)).all()
     if request.method == 'POST':
-        if form.validate_on_submit:
+        if form.validate_on_submit and form.area_min.data <= form.area_max.data:
             result = Sections.query.order_by(Sections.building_id) \
                 .filter(Sections.function == form.func.data) \
                 .filter(form.area_max.data >= Sections.area, Sections.area >= form.area_min.data) \
@@ -47,6 +47,9 @@ def rent():
                 return render_template('rent_sections.html',form=form)
             else:
                 return render_template('rent_sections.html',form=form, result=result)
+        else:
+            flash('Некорректно введены данные.', category='error')
+            return render_template('rent_sections.html',form=form)
     else:
         return render_template('rent_sections.html', form=form, result=result)
     
