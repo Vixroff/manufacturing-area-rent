@@ -6,9 +6,13 @@ from datetime import datetime
 """
 Функции присваивания значений
 """
+def check_empty(data):
+    if data == '':
+        return None
+    return data
 
 def add_building(row):
-    building = Buildings(street = row['street'], index = row['index'],
+    building = Buildings(street = row['street'], index = row['index'].strip(),
     count_floors = row['count_floors'], photo = row['photo'])
     
     db.session.add(building)
@@ -24,7 +28,7 @@ def add_tenant(row):
 
 def add_section(row):
     section = Sections(building_id = row['building_id'], index = row['index'], floor = row['floor'],
-    function = row['function'], area = row['area'], tenant_id = row['tenant_id'])
+    function = row['function'], area = row['area'], tenant_id = check_empty(row['tenant_id']))
 
     db.session.add(section)
     db.session.commit()

@@ -5,13 +5,14 @@
   </head>
   <body>
     <header>
-
         <div class="collapse bg-dark" id="navbarHeader">
           <div class="container">
             <div class="row">
               <div class="col-sm-4 offset-md-1 py-4">
                 <h4 class="text-white">Меню</h4>
                 <ul class="list-unstyled">
+                  <li><a href="/rent" class="text-white">Арендовать помещения</a></li>
+                  <li><a href="/tenants" class="text-white">Список компаний</a></li>
                   <li><a href="#" class="text-white">Войти/Регистрация</a></li>
                   <li><a href="#" class="text-white">Контакты</a></li>
                 </ul>
@@ -39,17 +40,6 @@
               </div>
           </div>
         </section>
-
-        <div class="containermt-5">
-            <h1> Люди из нашей БД</h1>
-            {% for human in peoples%}
-            <div class="alert alert-info">
-                <h2> {{ human.adress }}</h2>
-                <p> {{ human.age }}</p>
-                <button class="btn btn-warning">Подробнее</button>
-            </div>
-            {% endfor %}
-        </div>
 
         <div class="album py-5 bg-light">
           <div class="container">
