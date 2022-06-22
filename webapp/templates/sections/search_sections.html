@@ -1,0 +1,33 @@
+<form action= ""  method="POST" >
+    <div class="form-group">
+    <br>
+        {{ form_1.func.label }}
+        {{ form_1.func }}
+    <br>
+    <br>
+        {{ form_1.area_min.label }}
+        {{ form_1.area_min }}
+    <br>
+    <br>
+        {{ form_1.area_max.label }}
+        {{ form_1.area_max }}
+    <br>
+    {{ form_1.submit }}
+</form>      
+    <h1> Список свободных помещений </h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    {% if sections != None %}
+    {% for section in sections %}
+        <h2> Cекция номер - {{ section.index }}, Адрес: {{ section.building.street }} - {{ section.building.index }}  </h2>
+        <p> Назначение - {{ section.function }}</p>
+        <p> Площадь:{{ section.area }} м^2 </p>
+    {% endfor %}  
+    {% endif %}      

@@ -1,1 +1,2 @@
-FLASK_APP=our_site.py
+FLASK_APP=webapp
+FLASK_ENV=development

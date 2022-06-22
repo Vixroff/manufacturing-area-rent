@@ -51,6 +51,3 @@ class Sections(db.Model):
      def __repl__(self):
         return f"{self.index}"
 
-
-if __name__ == '__main__':
-    db.create_all()

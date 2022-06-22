@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href= "{{ url_for('static', filename = 'css/style.css') }}">
+    {% include "maps/js_map.html" %}
+</head>
+<body>
+    {% include "maps/map.html" %}
+    {% include "sections/search_sections.html" %}
+    <div>
+    </div>
+</body>
+</html>
