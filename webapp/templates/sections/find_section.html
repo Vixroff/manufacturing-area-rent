@@ -24,7 +24,7 @@
             </ul>
         {% endif %}
     {% endwith %}
-    {% if sections != None %}
+    {% if sections %}
     {% for section in sections %}
         <h2> Cекция номер - {{ section.index }}, Адрес: {{ section.building.street }} - {{ section.building.index }}  </h2>
         <p> Назначение - {{ section.function }}</p>

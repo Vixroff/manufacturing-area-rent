@@ -1,12 +1,12 @@
-from flask import flash, request
+from flask import flash, session
 from webapp.models import Sections
 
 
-def search_sections(form):        
-    if form.validate_on_submit and form.area_min.data <= form.area_max.data:
+def search_sections(func, area_min, area_max):        
+    if area_min <= area_max:
         sections = Sections.query.order_by(Sections.building_id) \
-            .filter(Sections.function == form.func.data) \
-            .filter(form.area_max.data >= Sections.area, Sections.area >= form.area_min.data) \
+            .filter(Sections.function == func) \
+            .filter(area_max >= Sections.area, Sections.area >= area_min) \
             .filter(Sections.tenant_id.is_(None)) \
             .all()
         if not sections:
