@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="vievport" content="width=device-width, initial-scale=1.0">
+    <title>Арендовать помещения</title>
+</head>
+
+<body>
+    <form action= ""  method="POST" >
+        <div class="form-group">
+                <br>
+                    {{ form.func.label }}
+                    {{ form.func }}
+                <br>
+                <br>
+                    {{ form.area_min.label }}
+                    {{ form.area_min }}
+                <br>
+                <br>
+                    {{ form.area_max.label }}
+                    {{ form.area_max }}
+                <br>
+                {{ form.submit }}
+    </form>      
+            <h1> Список свободных помещений </h1>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class=flashes>
+                        {% for message in messages %}
+                            {{ message }}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+                {% for sec in result %}
+                    <h2> Cекция номер - {{ sec.index }}, Адрес: {{ sec.building.street }} - {{ sec.building.index }}  </h2>
+                    <p> Назначение - {{ sec.function }}</p>
+                    <p> Площадь:{{ sec.area }} м^2 </p>
+                {% endfor %}
+        
+    </form>              
+</body>
+</html>                

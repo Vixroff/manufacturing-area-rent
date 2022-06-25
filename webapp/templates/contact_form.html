@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+<body>
+  <form method="POST" >
+      <div class="form-group">
+              <br>
+                  {{ form.name_cmpany.label }}
+                  {{ form.name_cmpany }}
+              <br>
+              <br>
+                  {{ form.name.label }}
+                  {{ form.name }}
+              <br>
+              <br>
+                  {{ form.email.label }}
+                  {{ form.email }}
+              <br>
+              <br>
+                  {{ form.phone.label }}
+                  {{ form.phone }}
+              <br>
+              <br>
+                  {{ form.message.label }}
+                  {{ form.message }}
+              <br>
+              
+              {{ form.submit3 }}
+              
+              {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                  <ul class=flashes>
+                      {% for message in messages %}
+                          {{ message }}
+                      {% endfor %}
+                  </ul>
+              {% endif %}
+          {% endwith %}
+</body>
+</html>                

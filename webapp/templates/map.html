@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href= "{{ url_for('static', filename = 'css/style.css') }}">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=4e365bd6-9813-4000-95f3-a859675b0dcc&lang=ru_RU" type="text/javascript"></script>
+    <script text="text/javascript">  
+        function init(){
+            let map = new ymaps.Map('map', {
+                center: [55.06771639944237,60.09706398026949],
+                zoom: [17]});
+            {% for building in buildings %}
+            var index = 'mark_' + '{{ building.index }}' 
+            var lat = {{ building.lat }}
+            var lon = {{ building.lon }}
+
+            index = new ymaps.Placemark([lat, lon])
+            map.geoObjects.add(index)
+            {% endfor %}
+        ;}
+        ymaps.ready(init)
+        </script>               
+</head>
+<body>
+    <div id="map" class="map"></div>
+
+</body>
+</html>
