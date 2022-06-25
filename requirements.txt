@@ -2,3 +2,5 @@ Flask-SQLAlchemy==2.5.1
 python-dotenv==0.20.0
 Flask-WTF==1.0.1
 flask-migrate==3.1.0
+telebot==0.0.4
+email-validator==1.2.1

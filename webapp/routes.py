@@ -1,11 +1,9 @@
 from webapp import app, db
 from config import Config
 from flask import render_template, redirect, request, session, url_for, json, flash
-
-
 from webapp.models import Buildings, Tenants, Sections
-from webapp.forms import RentFilterForm, LoginForm
-
+from webapp.forms import RentFilterForm, LoginForm, ContactForm
+from TG_bot import message_bot, chat_id
 
 
 @app.route('/index')
@@ -53,6 +51,22 @@ def rent():
     else:
         return render_template('rent_sections.html', form=form, result=result)
     
+@app.route('/contact/', methods=['GET', 'POST']) 
+def contact_form():
+    form = ContactForm()
+    if request.method == 'POST':
+        if form.validate_on_submit:
+            message_to_tgBot = (f'Компания: {form.name_cmpany.data}\n'
+                                f'Имя: {form.name.data}\n'
+                                f'Почта: {form.email.data}\n'
+                                f'Телефон: {form.phone.data}\n'
+                                f'Сообщение: {form.message.data}\n')
+            message_bot.send_message(chat_id, message_to_tgBot, disable_notification = True)
+            flash('Спасибо! Мы обязательно свяжимся с вами!', category='succes')
+            return render_template('contact_form.html',form=form)
+    else:
+        return render_template('contact_form.html',form=form)
+
 
 @app.route("/tenants/")
 def tenants():

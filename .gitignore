@@ -133,3 +133,5 @@ dmypy.json
 *.db
 __pycache__
 env
+.flaskenv
+bot_config.py
