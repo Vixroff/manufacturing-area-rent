@@ -1,10 +1,11 @@
 <form action= ""  method="POST" >
     <div class="form-group" id="tag">
+        {{ tenant_form.hidden_tag() }}
     <br>
-        {{ form_2.name.label }}
-        {{ form_2.name }}
+        {{ tenant_form.name.label }}
+        {{ tenant_form.name }}
     <br>
-        {{ form_2.submit2 }}
+        {{ tenant_form.submit2 }}
 <script>
     $(function() {
         $.ajax({
