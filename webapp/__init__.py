@@ -1,15 +1,19 @@
 from config import Config
-from flask import Flask
+from flask import Flask 
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
+db = SQLAlchemy()
+migrate = Migrate()
 
+def create_app():
+    app = Flask(__name__)
+    app.config.from_object(Config)
 
-app = Flask(__name__)
-app.config.from_object(Config)
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+    db.init_app(app)
+    migrate.init_app(app, db)
 
+    from webapp.main.views import bp as main_bp
+    app.register_blueprint(main_bp)
 
-
-from webapp import routes
+    return app
