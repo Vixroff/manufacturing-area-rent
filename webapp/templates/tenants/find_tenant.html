@@ -9,7 +9,7 @@
 <script>
     $(function() {
         $.ajax({
-            url: '{{ url_for("autocomplete") }}'
+            url: '{{ url_for("main.autocomplete") }}'
             }).done(function (data) {
                 $('#autocomplete').autocomplete({
                     source: data.json_list,

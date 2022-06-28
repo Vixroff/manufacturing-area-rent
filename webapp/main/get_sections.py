@@ -1,5 +1,5 @@
-from flask import flash, session
-from webapp.models import Sections
+from flask import flash
+from webapp.main.models import Sections
 
 
 def search_sections(func, area_min, area_max):         

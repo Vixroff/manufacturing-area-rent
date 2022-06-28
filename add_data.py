@@ -1,5 +1,5 @@
 import csv
-from webapp.models import Buildings, Tenants, Sections
+from webapp.main.models import Buildings, Tenants, Sections
 from webapp import db 
 from datetime import datetime
 from webapp import create_app
