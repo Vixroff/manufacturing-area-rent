@@ -1,7 +1,8 @@
 .DS_Store
 *.db
 env
-
+.vscode
+setup.cfg
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -1,8 +1,10 @@
 import os
+
 from dotenv import load_dotenv
 
 basedir = os.path.dirname(os.path.abspath(__file__))
 load_dotenv(os.path.join(basedir, '.env'))
+
 
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY')
@@ -10,4 +12,4 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     YANDEX_API_KEY_MAP = os.environ.get('YANDEX_API_KEY_MAP')
     TGBOT_TOKEN = os.environ.get('TGBOT_TOKEN')
-    TGBOT_CHAT_ID =  os.environ.get('TGBOT_CHAT_ID')
+    TGBOT_CHAT_ID = os.environ.get('TGBOT_CHAT_ID')
