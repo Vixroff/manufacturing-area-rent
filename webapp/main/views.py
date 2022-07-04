@@ -1,6 +1,5 @@
 from flask import Blueprint, current_app, flash, jsonify, render_template, request
 
-#from tgBot import chat_id, message_bot
 
 from webapp.main.forms import ContactForm, FindSection, FindTenant
 from webapp.main.get_sections import search_sections
@@ -32,7 +31,6 @@ def main():
     tenant = None
     if request.method == 'POST' and find_tenant_form.submit.data:
         tenant = Tenants.query.filter(Tenants.name == find_tenant_form.name.data).first()
- 
     return render_template(
         'main.html', yandex_api=yandex_api,
         section_form=find_section_form, tenant_form=find_tenant_form,

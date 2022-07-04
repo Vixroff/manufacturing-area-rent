@@ -1,8 +1,9 @@
 from webapp import db
 
 """
-Модели таблиц базы данных. 
-Связи в таблицах: "buildings" one-to-many "sections", "tenants" one-to-many "sections" 
+Модели таблиц базы данных.
+Связи в таблицах: "buildings" one-to-many "sections", "tenants" one-to-many "sections"
+
 """
 
 

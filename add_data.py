@@ -71,11 +71,11 @@ coordinates_of_building = [
     {'index': '7/1', 'lat_coordinate': 55.06714203245765, 'lon_coordinate': 60.09761337562222},
     {'index': '7/2', 'lat_coordinate': 55.06679723446101, 'lon_coordinate': 60.098171275097314},
     {'index': '7/7', 'lat_coordinate': 55.067787994017486, 'lon_coordinate': 60.09784012730405},
-    {'index': '7/бокс 1', 'lat_coordinate': 55.067261568696836, 'lon_coordinate': 60.09649365837861}, 
+    {'index': '7/бокс 1', 'lat_coordinate': 55.067261568696836, 'lon_coordinate': 60.09649365837861},
     {'index': '7/13', 'lat_coordinate': 55.06759404865595, 'lon_coordinate': 60.09542613919065},
-    {'index': '7/12', 'lat_coordinate': 55.06791421192026, 'lon_coordinate': 60.09595185215759}, 
-    {'index': '7/11', 'lat_coordinate': 55.06768332520949, 'lon_coordinate': 60.09713202412411}, 
-    {'index': '7/19', 'lat_coordinate': 55.06791421192026, 'lon_coordinate': 60.09681015904238}
+    {'index': '7/12', 'lat_coordinate': 55.06791421192026, 'lon_coordinate': 60.09595185215759},
+    {'index': '7/11', 'lat_coordinate': 55.06768332520949, 'lon_coordinate': 60.09713202412411},
+    {'index': '7/19', 'lat_coordinate': 55.06791421192026, 'lon_coordinate': 60.09681015904238},
 ]
 
 

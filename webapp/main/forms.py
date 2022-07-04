@@ -41,12 +41,12 @@ class ContactForm(FlaskForm):
     name = StringField(
         'Как мы можем к Вам обращаться',
         validators=[DataRequired(),
-                    Length(min=2, max=10, message="Поле не может иметь меньше 2х и больше 10ти символов")]
+                    Length(min=2, max=10, message="Поле не может иметь меньше 2х и больше 10ти символов")],
         )
     email = EmailField(
         "Email",
         validators=[InputRequired("Пожалуйста введите адрес электронной почты"),
-                    Email("Пожалуйста введите адрес электронной почты")]
+                    Email("Пожалуйста введите адрес электронной почты")],
         )
     phone = StringField(
         'Контактный номер',
