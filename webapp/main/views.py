@@ -2,9 +2,9 @@ from flask import Blueprint, current_app, flash, jsonify, render_template, reque
 
 
 from webapp.main.forms import ContactForm, FindSection, FindTenant
-from webapp.main.get_sections import search_sections
+from tgBot import chat_id, message_bot
 from webapp.main.models import Buildings, Tenants
-
+from webapp.main.get_sections import search_sections
 
 bp = Blueprint('main', __name__)
 
@@ -31,6 +31,13 @@ def main():
     tenant = None
     if request.method == 'POST' and find_tenant_form.submit.data:
         tenant = Tenants.query.filter(Tenants.name == find_tenant_form.name.data).first()
+    if request.method == 'POST' and contact_form.validate_on_submit:
+        message_to_tgBot = (f'Компания: {contact_form.name_company.data}\n'
+                            f'Имя: {contact_form.name.data}\n'
+                            f'Почта: {contact_form.email.data}\n'
+                            f'Телефон: {contact_form.phone.data}\n'
+                            f'Сообщение: {contact_form.message.data}\n')
+        message_bot.send_message(chat_id, message_to_tgBot)
     return render_template(
         'main.html', yandex_api=yandex_api,
         section_form=find_section_form, tenant_form=find_tenant_form,
