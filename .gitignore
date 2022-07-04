@@ -1,4 +1,8 @@
 .DS_Store
+*.db
+env
+.vscode
+setup.cfg
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -129,7 +133,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-*.db
-__pycache__
-env

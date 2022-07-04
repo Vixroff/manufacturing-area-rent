@@ -1,0 +1,36 @@
+<form action="{{ url_for('main.main') }}" method="POST">
+      <div class="form-group">
+              <br>
+                  {{ contact_form.name_company.label }}
+                  {{ contact_form.name_company }}
+              <br>
+              <br>
+                  {{ contact_form.name.label }}
+                  {{ contact_form.name }}
+              <br>
+              <br>
+                  {{ contact_form.email.label }}
+                  {{ contact_form.email }}
+              <br>
+              <br>
+                  {{ contact_form.phone.label }}
+                  {{ contact_form.phone }}
+              <br>
+              <br>
+                  {{ contact_form.message.label }}
+                  {{ contact_form.message }}
+              <br>
+              
+              {{ contact_form.submit1 }}
+              
+              {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                  <ul class=flashes>
+                      {% for message in messages %}
+                          {{ message }}
+                      {% endfor %}
+                  </ul>
+              {% endif %}
+          {% endwith %}
+</body>
+</html>                
