@@ -19,7 +19,7 @@ def check_empty(data):
 def add_building(row):
     building = Buildings(
         street=row['street'], index=row['index'].strip(),
-        count_floors=row['count_floors'], photo=row['photo']
+        count_floors=row['count_floors'], photo=row['photo'],
         )
 
     db.session.add(building)
