@@ -3,9 +3,9 @@ name: CI
 on:
  
   push:
-    branches: [ "CodeChecks" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "CodeChecks" ]
+    branches: [ "main" ]
 
 
   workflow_dispatch:
