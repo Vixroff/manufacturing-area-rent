@@ -20,7 +20,7 @@ def add_building(row):
     building = Buildings(
         street=row['street'], index=row['index'].strip(),
         count_floors=row['count_floors'], photo=row['photo'],
-        )
+    )
 
     db.session.add(building)
     db.session.commit()
@@ -31,7 +31,7 @@ def add_tenant(row):
         name=row['name'], email=row['email'], personal_phone=row['personal_phone'],
         commercial_phone=row['commercial_phone'], start_rent=datetime.strptime(row['start_rent'], '%d.%m.%Y'),
         end_rent=datetime.strptime(row['end_rent'], '%d.%m.%Y'),
-        )
+    )
 
     db.session.add(tenant)
     db.session.commit()
@@ -41,7 +41,7 @@ def add_section(row):
     section = Sections(
         building_id=row['building_id'], index=row['index'], floor=row['floor'],
         function=row['function'], area=row['area'], tenant_id=check_empty(row['tenant_id']),
-        )
+    )
 
     db.session.add(section)
     db.session.commit()
