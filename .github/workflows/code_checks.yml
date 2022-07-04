@@ -5,17 +5,17 @@ on: [push, pull_request]
 jobs:
   build:
   runs-on: ubuntu-latest
-    name: Lint
-    steps:
-      - name: Check out source repository
-        uses: actions/checkout@v2
-      - name: Set up Python environment
-        uses: actions/setup-python@v2
-        with:
-          python-version: "3.10"
-      - name: flake8 Lint
-        run: pip install -r requerements.txt
-    - name: Run flake8
-    run: flake8 .
-    - name: Run mypy
-    run: mypy .
+  name: Lint
+  steps:
+    - name: Check out source repository
+      uses: actions/checkout@v2
+    - name: Set up Python environment
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.10"
+    - name: flake8 Lint
+      run: pip install -r requerements.txt
+  - name: Run flake8
+  run: flake8 .
+  - name: Run mypy
+  run: mypy .
