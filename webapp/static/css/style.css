@@ -1,5 +1,416 @@
-.map {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+*,*:before,*:after {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat';
+    margin: 12px;
+}
+
+.container{
+    width: 1300px;
+    margin: 0 auto;
+}
+
+
+/* header start */
+.header{
+    background-color: #FFFFFF;
+}
+
+.header__wrapper{
+    height: 180px;
+    margin-bottom: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__block1{
+    width: 300px;
+}
+
+.overlap1{
+    text-align: center;
+    height: 45px;
+    width: 150px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #FF7672;
+    padding: 6px ;
+}
+
+.nav__link{
+    text-align: center;
+    text-decoration: none;  
+}
+
+.navs-text{
+    font-family: Montserrat;
+    color: black;
+    font-size: 20px;
+    letter-spacing: 0px;
+    font-weight: 600;
+    font-size: normal;
+}
+
+/* header end */
+
+
+/* map-svg start */
+.map-svg__row1-title{
+    color: #FF7672; 
+    text-align: center; 
+    font-weight: 600; 
+    font-style: normal;
+    font-size: 30px;
+
+    height: 50px;
+}
+
+.map-svg__row2-map{
+    height: 700px;
+    position:relative;
+    top: -60px;
+    margin-bottom: 100px;
+}
+/* map-svg end */
+
+
+/* about start */
+.about__row1-title{
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+    margin-bottom: 30px;
+
+    color: #FF7672;
+    text-align: center;
+    font-weight: 600;
+    font-size: 30px;
+    font-style: normal;
+}
+
+.about__row2-text{
+    margin-left: 250px;
+    margin-right: 250px;
+    text-align: justify;
+    margin-bottom: 30px;
+
+    font-family: 'Montserrat';;
+    color: black;
+    font-weight: 400;
+    font-size: 16px;
+    margin-left: 250px;
+    margin-right: 250px;
+    line-height: 30px;  
+}
+
+.about__row3-navs{
+    height: 160px;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-bottom: 100px;
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+}
+
+.about__overlap{
+    width: 300px;
+    height: 60px;
+    background: #CFD4DC;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.about__nav-text{
+    color: white;
+    position: relative;
+    top: 15px;
+    font-size: 20px;
+    letter-spacing: 0px;
+    font-weight: 500;
+    font-size: normal;
+}
+/* about end */
+
+
+/* rent start */
+.rent__wrapper{
+    display: flex;
+    margin-bottom: 100px;
+    justify-content: space-between;
+}
+
+.rent__block1{
+    width: 700px;
+    margin-right: 50px;
+}
+
+.rent__block1__row1-headline{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 42px;
+
+    margin-bottom: 30px;
+}
+
+.rent__block1__row2-text{
+    margin-bottom: 30px;
+    text-align: justify;
+    font-family: 'Montserrat';;
+    color: black;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.rent__block1__row3-wrapper{
+    height: 60px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dropbtn {
+    border: none;
+    cursor: pointer;
+    background-color: white;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #CFD4DC;
+    width: 100%;
+    z-index: 1;
+    overflow-y: scroll;
+}
+
+.dropdown-content div {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: white}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #FF7672;
+    color: white;
+}
+
+.submit-rent-form{
+    font-family: 'Montserrat';
+    color: #FFFFFF;
+    font-size: 20px;
+    letter-spacing: 0px;
+    font-weight: 600;
+    font-size: normal;
+
+    width: 220px;
+    height: 60px;
+    background-color: #FF7672;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.rent__block1__row4-results{
+    width: 700px;
+    height: 350px;
+    background-color: #F7F9FE;
+    overflow-y: auto;
+}
+
+.rent__block2{
     width: 500px;
-    height: 500px;
+    text-align: right;
+}
+
+.rent__block2__row2-apply{
+    margin-top: 85px;
+}
+
+.rent__apply{
+    font-family: 'Montserrat';
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 43px;
+
+    width: 430px;
+    height: 100px;
+    background-color: #FF7672;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+}
+/* rent end */
+
+/* tenant start */
+.tenants__wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.tenants__block1{
+    width: 500px;
+}
+
+.tenants__block2{
+    width: 600px;
+    margin-left: 50px;
+}
+
+.tenants__block2__row1-headline{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 42px;
+
+    margin-bottom: 30px;
+}
+
+.tenants__block2__row2-wrapper{
+    display: flex;
+    height: 100px;
+    margin-bottom: 50px;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.tenant-form__searchfield{
+    width: 430px;
+    height: 75px;
+    border: 3px solid #000000;
+
+    font-family: 'Montserrat';
+    color: black;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 43px;
+}
+
+.tenant-form__searchfield::placeholder{
+    color: #CFD4DC;
+}
+
+.searchfield__label{
+    color: #CFD4DC;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 43px;
+}
+
+.tenant-form__submit{
+    font-family: 'Montserrat';
+    color: #FFFFFF;
+    font-size: 20px;
+    letter-spacing: 0px;
+    font-weight: 600;
+    font-size: normal;
+
+    width: 150px;
+    height: 75px;
+    background-color: #FF7672;
+    border-radius: 15px;
+
+    border: none;
+    cursor: pointer;
+}
+
+
+.tenants__block2__row3-results{
+    width: 600px;
+    height: 200px;
+    background-color: #F7F9FE;
+}
+/* tenant end */
+
+
+/* footer start */
+.footer__wrapper{
+    display: flex;
+    height: 680px;
+    align-items: center;
+}
+
+.footer__block1{
+    width: 600px;
+    height: 680px;
+    background-color: #FF7672;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__block1__contacts{
+    width: 315px;
+    height: 400px;
+    text-align: center;
+}
+
+.coontacts__headline{
+    color: white;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 42px;
+
+    margin-bottom: 100px;
+}
+
+.coontacts__refs{
+    text-align: left;
+    margin-bottom: 150px;
+}
+
+.coontacts__ref{
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 40px;  
+
+    height: 30px;
+    text-decoration: none;
+}
+
+.coontacts__footer-ref{
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 40px;
+
+    text-decoration: none;
+}
+
+.map{
+    width: 816px;
+    height: 680px;
     background-color: #333;
 }
+/* footer end */

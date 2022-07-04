@@ -14,10 +14,11 @@ class FindSection(FlaskForm):
                 validators=[InputRequired(), NumberRange(min=0, message='Число не может быть меньше 0')])
     area_max = IntegerField('Максимальная площадь, м²', 
                 validators=[InputRequired(), NumberRange(min=0, message='Число не может быть меньше 0'), check_area])
-    submit1 = SubmitField('Применить фильтр')
+    submit1 = SubmitField('применить')
     
 
 
 class FindTenant(FlaskForm):
-    name = StringField('Название компании', id='autocomplete', validators=[DataRequired()])
-    submit2 = SubmitField('Поиск')
+    name = StringField(id='autocomplete', validators=[DataRequired()], \
+        render_kw={"placeholder": "  Поиск"})
+    submit2 = SubmitField('Найти')

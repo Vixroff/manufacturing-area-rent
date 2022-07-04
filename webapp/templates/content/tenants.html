@@ -1,0 +1,39 @@
+<section class="tenants">
+    <div class="container">
+        <div class="tenants__wrapper">
+
+            <div class="tenants__block1">
+                <div class="tenants__block1__row1-img">
+                    <img src="{{ url_for('static', filename = 'img/tenant.png') }}"/><img style="position:relative; bottom:220px; left:100px" src="{{ url_for('static', filename = 'img/LOGO2.svg') }}"/>
+                </div>
+            </div>
+
+            <div class="tenants__block2">
+                <div class="tenants__block2__row1-headline">
+                    <span style="color:#FF7672;">Компании.</span> 
+                    Познакомьтесь <br>с потенциальными соседями <br> вашего помещения
+                </div>
+                <form class="tenants__block2__row2-wrapper" action= ""  method="POST">
+                    {{ tenant_form.hidden_tag() }}
+                    <div class="tenants__block2__row2__block1-searchfield">
+                        {{ tenant_form.name(class_="tenant-form__searchfield") }}
+                    </div>
+                    <div class="tenants__block2__row2__block2-submit">
+                        <div>{{ tenant_form.submit2(class_="tenant-form__submit") }}</div>
+                    </div>
+                    {% include "scripts/autocomplete_js.html" %}
+                </form>
+                <div class="tenants__block2__row3-results">     
+                    {% if tenant %}
+                    <div>
+                        <h2>{{ tenant.name }}</h2>
+                        {% for section in tenant.section %}
+                        <h3>{{ section.index }} - {{ section.building.street }}, {{ section.building.index }}</h3>    
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
