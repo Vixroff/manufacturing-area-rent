@@ -20,5 +20,4 @@ def create_app():
 
     from webapp.main.views import bp as main_bp
     app.register_blueprint(main_bp)
-
     return app

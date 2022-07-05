@@ -5,8 +5,8 @@
                   {{ contact_form.name_company }}
               <br>
               <br>
-                  {{ contact_form.name.label }}
-                  {{ contact_form.name }}
+                  {{ contact_form.name_user.label }}
+                  {{ contact_form.name_user }}
               <br>
               <br>
                   {{ contact_form.email.label }}
@@ -21,7 +21,7 @@
                   {{ contact_form.message }}
               <br>
               
-              {{ contact_form.submit1 }}
+              {{ contact_form.submit3 }}
               
               {% with messages = get_flashed_messages() %}
               {% if messages %}

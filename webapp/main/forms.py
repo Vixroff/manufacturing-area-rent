@@ -24,12 +24,12 @@ class FindSection(FlaskForm):
         validators=[InputRequired(),
                     NumberRange(min=0, message='Число не может быть меньше 0'), check_area],
     )
-    submit = SubmitField('Применить фильтр')
+    submit1 = SubmitField('Применить фильтр')
 
 
 class FindTenant(FlaskForm):
-    name = StringField('Название компании', id='autocomplete', validators=[DataRequired()])
-    submit = SubmitField('Поиск')
+    name_tenant = StringField('Название компании', id='autocomplete', validators=[DataRequired()])
+    submit2 = SubmitField('Поиск')
 
 
 class ContactForm(FlaskForm):
@@ -38,7 +38,7 @@ class ContactForm(FlaskForm):
         validators=[DataRequired(),
                     Length(min=2, max=30, message="Поле не может иметь меньше 2х и больше 30ти символов")],
     )
-    name = StringField(
+    name_user = StringField(
         'Как мы можем к Вам обращаться',
         validators=[DataRequired(),
                     Length(min=2, max=10, message="Поле не может иметь меньше 2х и больше 10ти символов")],
@@ -57,4 +57,4 @@ class ContactForm(FlaskForm):
         validators=[DataRequired(),
                     Length(min=1, max=250)],
     )
-    submit1 = SubmitField('Отправить')
+    submit3 = SubmitField('Отправить')
