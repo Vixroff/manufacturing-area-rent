@@ -1,8 +1,8 @@
 .DS_Store
 *.db
-__pycache__
 env
-.env
+
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
