@@ -1,0 +1,24 @@
+.st0{
+    enable-background: new;
+    }
+
+.field{
+    fill:#CFD4DC;
+    }
+
+.building{
+    fill:#FFFFFF;
+    stroke:#000000;
+    stroke-width:0.7595;
+    stroke-linejoin:bevel;
+    stroke-miterlimit:10;
+    cursor: pointer;
+}
+
+.building:hover{
+    fill:#FF7672;;
+}
+
+.number{
+    fill: black;
+}

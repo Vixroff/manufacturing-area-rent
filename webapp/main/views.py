@@ -29,7 +29,7 @@ def main():
                   category='error')
     tenant = None
     if request.method == 'POST' and find_tenant_form.submit2.data:
-        tenant = Tenants.query.filter(Tenants.name_tenant == find_tenant_form.name_tenant.data).first()
+        tenant = Tenants.query.filter(Tenants.name == find_tenant_form.name_tenant.data).first()
     if request.method == 'POST' and contact_form.submit3.data:
         if contact_form.validate():
             callback_application = (f'Компания: {contact_form.name_company.data}\n'

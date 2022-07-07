@@ -28,8 +28,9 @@ class FindSection(FlaskForm):
 
 
 class FindTenant(FlaskForm):
-    name_tenant = StringField('Название компании', id='autocomplete', validators=[DataRequired()])
-    submit2 = SubmitField('Поиск')
+    name_tenant = StringField(
+        'Название компании', id='autocomplete', validators=[DataRequired()], render_kw={"placeholder": "  Поиск"})
+    submit2 = SubmitField('Найти')
 
 
 class ContactForm(FlaskForm):
