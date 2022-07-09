@@ -1,6 +1,6 @@
 from flask import Blueprint, current_app, flash, jsonify, render_template, request
 
-from webapp.Message_to_Telegram import chat_id, send_message_to_telegram, token
+from webapp.Message_to_Telegram import send_message_to_telegram
 from webapp.main.forms import ContactForm, FindSection, FindTenant
 from webapp.main.get_sections import search_sections
 from webapp.main.models import Buildings, Tenants
@@ -11,6 +11,8 @@ bp = Blueprint('main', __name__)
 @bp.route('/', methods=['GET', 'POST'])
 def main():
     yandex_api = current_app.config['YANDEX_API_KEY_MAP']
+    token = current_app.config['TGBOT_TOKEN']
+    chat_id = current_app.config['CHAT_ID']
     find_section_form = FindSection()
     find_tenant_form = FindTenant()
     buildings_data = Buildings.query.all()
@@ -31,13 +33,12 @@ def main():
     if request.method == 'POST' and find_tenant_form.submit2.data:
         tenant = Tenants.query.filter(Tenants.name == find_tenant_form.name_tenant.data).first()
     if request.method == 'POST' and contact_form.submit3.data:
-        if contact_form.validate():
-            callback_application = (f'Компания: {contact_form.name_company.data}\n'
-                                    f'Имя: {contact_form.name_user.data}\n'
-                                    f'Почта: {contact_form.email.data}\n'
-                                    f'Телефон: {contact_form.phone.data}\n'
-                                    f'Сообщение: {contact_form.message.data}\n')
-            send_message_to_telegram(token, chat_id, callback_application)
+        callback_application = (f'Компания: {contact_form.name_company.data}\n'
+                                f'Имя: {contact_form.name_user.data}\n'
+                                f'Почта: {contact_form.email.data}\n'
+                                f'Телефон: {contact_form.phone.data}\n'
+                                f'Сообщение: {contact_form.message.data}\n')
+        send_message_to_telegram(token, chat_id, callback_application)
     return render_template(
         'main.html', yandex_api=yandex_api,
         section_form=find_section_form, tenant_form=find_tenant_form,
