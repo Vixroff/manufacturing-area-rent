@@ -11,3 +11,5 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'DataBase.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     YANDEX_API_KEY_MAP = os.getenv('YANDEX_API_KEY_MAP')
+    TGBOT_TOKEN = os.getenv('TGBOT_TOKEN')
+    CHAT_ID = os.getenv('TGBOT_CHAT_ID')
