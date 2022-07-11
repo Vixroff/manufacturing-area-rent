@@ -1,1 +1,1 @@
-web: gunicorn app: __inint__
+web: gunicorn webapp/__inint__: webapp/__inint__
