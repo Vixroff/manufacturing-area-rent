@@ -1,1 +1,2 @@
 web: gunicorn app: __inint__
+heroku ps:scale web=1
