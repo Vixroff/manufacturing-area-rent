@@ -8,7 +8,7 @@ from webapp.main.models import Buildings, Tenants
 bp = Blueprint('main', __name__)
 
 
-@bp.route('/index', methods=['GET', 'POST'])
+@bp.route('/', methods=['GET', 'POST'])
 def main():
     yandex_api = current_app.config['YANDEX_API_KEY_MAP']
     token = current_app.config['TGBOT_TOKEN']
