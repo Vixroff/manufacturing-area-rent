@@ -1,5 +1,29 @@
-<section class="sections">
+<section id="sections" class="sections" style="position:relative">
     <div class="container">
+
+        <div id="rent__block2__apply">
+            <a href="#sections" class="contact-form__outer"></a>
+            <form action="#rent__block2__applied" method="POST" class="contact-form">
+                {{ contact_form.hidden_tag() }}
+                <div class="contact-form__title">Заполните форму</div>
+                <div class="contact-form__form"> 
+                    {{ contact_form.name_company(class_="contact-form__field") }} <br>
+                    {{ contact_form.name_user(class_="contact-form__field") }} <br>
+                    {{ contact_form.email(class_="contact-form__field") }} <br>
+                    {{ contact_form.phone(class_="contact-form__field") }} <br>
+                    {{ contact_form.message(class_="contact-form__field") }} <br>
+                </div><br>
+                <div > 
+                    {{ contact_form.submit3(class_="contact-form__submit") }} 
+                </div>
+            </form>
+        </div>
+        <div id="rent__block2__applied">
+            <a href="#sections" class="contact-form__outer__applied">
+                <div class="contact-form__title__applied">Заявка отправилась в обработку</div>
+            </a>
+        </div>
+
         <div class="rent__wrapper">
             <div class="rent__block1">
                 <div class="rent__block1__row1-headline"><span style="color:#FF7672;">Аренда.</span> 
@@ -11,19 +35,15 @@
                     or randomised words which don't look even slightly believable. 
                     If you are going to use a passage of Lorem Ipsum, 
                     you need to be sure there isn't anything embarrassing hidden in the middle of text. 
-                    All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, 
-                    making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, 
-                    combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. 
-                    Ниже можно посмотреть информацию о доступных для аренды помещениях.
                 </div>                  
                 
-                <form class="rent__block1__row3-wrapper" action= ""  method="POST">
+                <form class="rent__block1__row3-wrapper" action= "#sections"  method="POST">
                     {{ section_form.hidden_tag() }}
                     <div class="rent__block1__row3__block1 dropdown">
                         <button class="dropbtn navs-text" disabled>тип помещения  <span><img src="{{ url_for('static', filename = 'img/polygon.svg') }}"/></span></button>
                         <div class="dropdown-content">                                
                             <div>
-                                {{ section_form.func }}
+                                {{ section_form.func(class_="section-form_field") }}
                             </div>
                         </div>
                     </div>
@@ -31,18 +51,27 @@
                         <button class="dropbtn navs-text" disabled>площадь  <span><img src="{{ url_for('static', filename = 'img/polygon.svg') }}"/></span></button>
                         <div class="dropdown-content">                                
                             <div>
-                                {{ section_form.area_min }}
+                                {{ section_form.area_min.label }}
+                                {{ section_form.area_min(class_="section-form_field") }}
                             </div>
                             <div>
-                                {{ section_form.area_max }}
+                                {{ section_form.area_max.label }}
+                                {{ section_form.area_max(class_="section-form_field") }}
                             </div>
                         </div>
                     </div>
                     <div class="rent__block1__row3__block3">
                         {{ section_form.submit1(class_="submit-rent-form") }}
                     </div>  
-                </form>              
+                </form>    
+
                 <div class="rent__block1__row4-results">
+                    <div class="rent__results_header">
+                        <div>номер здания</div>
+                        <div>номер секции</div>
+                        <div>тип</div>
+                        <div>площадь</div>
+                    </div>
                     {% with messages = get_flashed_messages() %}
                     {% if messages %}
                         <ul class=flashes>
@@ -54,10 +83,11 @@
                     {% endwith %}
                     {% if sections %}
                     {% for section in sections %}
-                    <div>
-                        <h2> Cекция номер - {{ section.index }}, Адрес: {{ section.building.street }} - {{ section.building.index }}  </h2>
-                        <p> Назначение - {{ section.function }}</p>
-                        <p> Площадь:{{ section.area }} м^2 </p>
+                    <div class="section-form__results">
+                        <div>{{ section.building.index }}</div>
+                        <div>{{ section.index }}</div>
+                        <div>{{ section.function }}</div>
+                        <div>{{ section.area }} м²</div>
                     </div>
                     {% endfor %} 
                     {% endif %}
@@ -65,12 +95,15 @@
             </div>
             <!-- /rent__block1 -->
 
+
             <div class="rent__block2">
                 <div class="rent__block2__row1-img">
                     <img src="{{ url_for('static', filename = 'img/section.png') }}"/>
                 </div>
                 <div class="rent__block2__row2-apply">
-                    <button class="rent__apply">оставить заявку</button> 
+                    <button class="rent__apply">
+                        <a href="#rent__block2__apply" class="a__text">оставить заявку</a>
+                    </button> 
                 </div>
             </div>
             <!-- rent__block2 -->
