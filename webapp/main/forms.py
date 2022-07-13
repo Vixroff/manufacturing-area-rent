@@ -38,29 +38,29 @@ class ContactForm(FlaskForm):
         'Компания',
         validators=[DataRequired(),
                     Length(min=2, max=30, message="Поле не может иметь меньше 2х и больше 30ти символов")],
-        render_kw={"placeholder": "  Название компании"})
-
+        render_kw={"placeholder": "  Название компании"},
+    )
     name_user = StringField(
         'Как мы можем к Вам обращаться',
         validators=[DataRequired(),
                     Length(min=2, max=10, message="Поле не может иметь меньше 2х и больше 10ти символов")],
-        render_kw={"placeholder": "  Ф.И.О."}
+        render_kw={"placeholder": "  Ф.И.О."},
     )
     email = EmailField(
         "Email",
         validators=[InputRequired("Пожалуйста введите адрес электронной почты"),
                     Email("Пожалуйста введите адрес электронной почты")],
-        render_kw={"placeholder": "  Email"}
+        render_kw={"placeholder": "  Email"},
     )
     phone = StringField(
         'Контактный номер',
         validators=[DataRequired()],
-        render_kw={"placeholder": "  Номер телефона"}
+        render_kw={"placeholder": "  Номер телефона"},
     )
     message = StringField(
         'Задать вопрос',
         validators=[DataRequired(),
                     Length(min=1, max=250)],
-        render_kw={"placeholder": "  Оставить сообщение"}
+        render_kw={"placeholder": "  Оставить сообщение"},
     )
     submit3 = SubmitField('Отправить')
