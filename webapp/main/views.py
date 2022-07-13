@@ -1,6 +1,6 @@
 from flask import Blueprint, current_app, flash, jsonify, render_template, request
 
-from webapp.Message_to_Telegram import chat_id, send_message_to_telegram, token
+from webapp.main.Message_to_Telegram import chat_id, send_message_to_telegram, token
 from webapp.main.forms import ContactForm, FindSection, FindTenant
 from webapp.main.get_sections import search_sections
 from webapp.main.models import Buildings, Tenants
@@ -27,6 +27,7 @@ def main():
         if not sections:
             flash('Нет свободных помещений по вашему запросу, пожалуйста, свяжитесь с нами, и мы поможем Вам.',
                   category='error')
+    tenants = Tenants.query.all()
     tenant = None
     if request.method == 'POST' and find_tenant_form.submit2.data:
         tenant = Tenants.query.filter(Tenants.name == find_tenant_form.name_tenant.data).first()
@@ -40,9 +41,9 @@ def main():
             send_message_to_telegram(token, chat_id, callback_application)
     return render_template(
         'main.html', yandex_api=yandex_api,
-        section_form=find_section_form, tenant_form=find_tenant_form,
+        section_form=find_section_form, tenant_form=find_tenant_form, contact_form=contact_form,
         buildings_data=buildings_data,
-        sections=sections, tenant=tenant, contact_form=contact_form,
+        sections=sections, tenant=tenant, tenants=tenants,
     )
 
 
