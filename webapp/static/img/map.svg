@@ -5,11 +5,9 @@
 
 <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="../css/map_style.css" type="text/css"/>
 
-
 <!-- inside -->
 <g id="showcase">
 	<g> 
-
 		<!-- field -->
 		<g id="ground" class="field">
 			<g>
@@ -27,7 +25,7 @@
 		<g>
 			<!-- building__7/13 -->
 			<g class="st0">
-				<g id="7/13" class="building">
+				<g id="built_7/13" class="building">
 					<g>
 						<polygon points="756.81,192.22 756.76,207.7 701.73,219.51 701.77,204.03 						"/>
 					</g>
@@ -53,7 +51,7 @@
 				</g>
 
 				<!-- building__7/12 -->
-				<g id="7/12" class="building">
+				<g id="built_7/12" class="building">
 					<g>
 						<polygon points="621.66,218.71 621.59,243.47 617.92,237.84 617.99,213.08 						"/>
 					</g>
@@ -83,7 +81,7 @@
 				</g>
 
 				<!-- building__7 бокс1 -->
-				<g id="7b1" class="building">
+				<g id="built_7b1" class="building">
 					<g>
 						<polygon points="285.4,216.66 285.34,238.33 281.85,230.07 281.91,208.4 						"/>
 					</g>
@@ -121,7 +119,7 @@
 				</g>
 
 				<!-- building__7/11 -->
-				<g id="7/11" class="building">
+				<g id="built_7/11" class="building">
 					<g>
 						<polygon points="481.59,257.09 481.52,281.86 471.86,288.22 471.93,263.46 						"/>
 					</g>
@@ -160,7 +158,7 @@
 				</g>
 
 				<!-- technical_building__1 -->
-				<g id="tech1" class="building">
+				<g id="built_tech1" class="building">
 					<g>
 						<polygon points="756.94,180.01 791.37,234.02 736.27,245.72 701.83,191.71 						"/>
 					</g>
@@ -173,7 +171,7 @@
 				</g>
 
 				<!-- building__7/19 -->
-				<g id="7/19" class="building">
+				<g id="built_7/19" class="building">
 					<g>
 						<polygon points="524.31,307.21 524.25,325.78 520.4,318.84 520.45,300.27 						"/>
 					</g>
@@ -190,7 +188,7 @@
 				</g>
 
 				<!-- building__7/2 -->
-				<g id="7/2" class="building">
+				<g id="built_7/2" class="building">
 					<g>
 						<polygon points="287.45,226.83 287.39,248.5 272.18,253.45 272.25,231.78 						"/>
 					</g>
@@ -223,7 +221,7 @@
 
 
 				<!-- building__7/1 -->
-				<g id="7/1" class="building">
+				<g id="built_7/1" class="building">
 					<g>
 						<polygon points="266.02,275.64 265.95,300.4 252.5,295.54 252.57,270.77 						"/>
 					</g>
@@ -246,20 +244,21 @@
 				</g>
 
 				<!-- building__7 -->
-				<g id="7" class="building">
-					<g>
-						<polygon points="268.45,287.19 253.04,302.19 214.64,288.92 230.04,273.92 						"/>
+				<a xlink:href="#sections">
+					<g class="building built_7">
+						<g>
+							<polygon points="268.45,287.19 253.04,302.19 214.64,288.92 230.04,273.92 						"/>
+						</g>
+						<g>
+							<polygon points="268.45,287.19 268.31,336.72 252.9,351.72 253.04,302.19 						"/>
+						</g>
+						<g>
+							<polygon points="253.04,302.19 252.9,351.72 214.5,338.45 214.64,288.92 						"/>
+						</g>
 					</g>
-					<g>
-						<polygon points="268.45,287.19 268.31,336.72 252.9,351.72 253.04,302.19 						"/>
-					</g>
-					<g>
-						<polygon points="253.04,302.19 252.9,351.72 214.5,338.45 214.64,288.92 						"/>
-					</g>
-				</g>
-
+				</a>
 				<!-- technical_building__2 -->
-				<g id="tech2" class="building">
+				<g id="built_tech2" class="building">
 					<g>
 						<polygon points="356.71,341.46 333.95,363.62 252.96,335.63 267.26,322.06 282.91,327.47 284.96,325.47 
 							297.13,329.68 303.8,323.18 						"/>
@@ -273,7 +272,7 @@
 				</g>
 
 				<!-- building__7/7 -->
-				<g id="7/7" class="building">
+				<g id="built_7/7" class="building">
 					<g>
 						<polygon points="411.17,342.16 382.39,370.2 350.63,359.22 379.41,331.19 						"/>
 					</g>
