@@ -12,6 +12,8 @@ body{
 .container{
     width: 1300px;
     margin: auto;
+    padding-top: 10px;
+    position: relative;
 }
 
 
@@ -74,15 +76,115 @@ body{
     height: 700px;
     position:relative;
     top: -60px;
-    margin-bottom: 100px;
 }
-/* 
-.map-svg__info7{
-    width: 100px;
-    height: 200px;
+
+.map-svg__info-field{
     position: absolute;
-    background-color: #000000;
-} */
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 320px;
+}
+
+.map-svg__info-form{
+    height: 250px;
+    width: 300px;
+    position: absolute;
+    bottom: 100px;
+    background-color: #FF7672;
+    border-radius: 30px;
+    padding: 30px 20px 30px; 
+}
+
+.map-svg__info-form div{
+    font-family: 'Montserrat';
+    color: #FFFFFF;
+    font-size: 20px;
+    letter-spacing: 0px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.map-svg__info-form div:first-child{
+    font-size: 20px;
+    letter-spacing: 0px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+#building_7{
+    display: none;
+}
+
+#building_7:target{
+    display: block;
+}
+
+#building_7-1{
+    display: none;
+}
+
+#building_7-1:target{
+    display: block;
+}
+
+#building_7-2{
+    display: none;
+}
+
+#building_7-2:target{
+    display: block;
+}
+
+#building_7-7{
+    display: none;
+}
+
+#building_7-7:target{
+    display: block;
+}
+
+#building_7-11{
+    display: none;
+}
+
+#building_7-11:target{
+    display: block;
+}
+
+#building_7-12{
+    display: none;
+}
+
+#building_7-12:target{
+    display: block;
+}
+
+#building_7-19{
+    display: none;
+}
+
+#building_7-19:target{
+    display: block;
+}
+
+#building_7-13{
+    display: none;
+}
+
+#building_7-13:target{
+    display: block;
+}
+
+#building_7-b1{
+    display: none;
+}
+
+#building_7-b1:target{
+    display: block;
+}
 /* map-svg end */
 
 
@@ -232,10 +334,6 @@ body{
 
     border: none;
     border-radius: 5px;
-}
-
-.dropdown-content a:hover {
-    background-color: white
 }
 
 .dropdown:hover .dropdown-content {
