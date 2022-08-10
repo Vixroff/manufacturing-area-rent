@@ -1,13 +1,9 @@
 import csv
 from datetime import datetime
 
-
 from webapp import create_app
 from webapp import db
 from webapp.main.models import Buildings, Sections, Tenants
-"""
-Функции присваивания значений
-"""
 
 
 def check_empty(data):
