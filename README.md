@@ -31,7 +31,7 @@
 
 <br/>
 
-> ![section](docs/section.png)
+![section](docs/section.png)
 
 <br/>
 
